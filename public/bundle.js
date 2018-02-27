@@ -73,7 +73,14 @@ var card ={
  suitsBottom: ["&#9830", "&#9829", "&#9824", "&#9827"],
  numbers: ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"],
 
-}
+};
+
+//these are spades and clubs
+//if (suits === "&#9827 || &#9824"){
+	
+//} else if (suits === "&#9829 || &#9830"){
+	
+//}
 
  
 function pullNumber() {
@@ -85,18 +92,30 @@ function pullBothSuits(){
 	var allSuits = Math.floor(Math.random() * (card.suits.length));
 	document.getElementById('topSuit').innerHTML = card.suits[allSuits];
 	document.getElementById('bottomSuit').innerHTML = card.suits[allSuits];
+	
+	
+	if (card.suits[allSuits]==="&#9830" || card.suits[allSuits]==="&#9829"){
+		document.getElementById("theCard").classList.add("redSuit");
+	}else if (card.suits[allSuits]==="&#9827" || card.suits[allSuits]==="&#9824"){
+			document.getElementById("theCard").classList.remove("redSuit");
+	
+	}
 }
+
 
 
 window.wholeCard = function(){
 	pullNumber();
 	pullBothSuits();
-	
-}
 
-//if (suits===suitsBottom) {
-//	return 
-	
+};
+
+
+// 	if (card.suits==="&#9830" || "&#9829"){
+// 		document.getElementById('topSuit').classList.add("redSuit");
+// }	else {
+// 	document.getElementById('topSuit').classList.add("blackSuit");
+// }
 
 
 /***/ })
